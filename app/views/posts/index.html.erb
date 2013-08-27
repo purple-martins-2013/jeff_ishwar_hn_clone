@@ -1,0 +1,12 @@
+<% if @error && @error.length > 0 %>
+  <h1>Error!</h1>
+  <% @error.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<% @posts.each do |post| %>
+
+<p><%= post.description %></p>
+
+<% end %>

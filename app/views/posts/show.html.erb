@@ -1,0 +1,12 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.description %></p>
+
+<%= form_for @comment do |f| %>
+  <%= f.text_field :content, placeholder: "Comment here!" %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.submit "Create a comment" %>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>
